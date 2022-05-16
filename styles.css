@@ -12,6 +12,7 @@ body {
 
 .container {
 	margin: 0px auto;
+	max-width: 60rem;
 }
 
 .slider {
@@ -19,6 +20,7 @@ body {
 	overflow: hidden;
 	padding: 3%;
 	margin: 3%;
+	border-radius: 1%;
 }
 
 .slider__img {
@@ -45,6 +47,8 @@ body {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	color: #AAAAAA;
+	padding: 3% 0;
 }
 
 .slider__title-preinner {
@@ -56,6 +60,8 @@ body {
 .slider__title-inner {
 	display: flex;
 	flex-direction: row;
+	width: auto;
+	min-width: 80%;
 }
 
 .slider__title-text {
@@ -75,8 +81,82 @@ body {
 .slider__control {
 	height: 1rem;
 	width: 1rem;
+	background-color: #555555;
 	cursor: pointer;
 	border-radius: 2rem;
 }
 
+.slider__button:hover .slider__control {
+	background-color: #AAAAAA;
+}
 
+.radio {
+	display: none;
+}
+
+#radio1, #radio2, #radio3, #radio4 {
+	cursor: pointer;
+}
+
+#radio1:checked ~ .slider__img > .slider__img-preinner > .slider__img-inner {
+    transform: translateX(-0%);	
+}
+
+#radio2:checked ~ .slider__img > .slider__img-preinner > .slider__img-inner {
+    transform: translateX(-100%);	
+}
+
+#radio3:checked ~ .slider__img > .slider__img-preinner > .slider__img-inner {
+    transform: translateX(-200%);
+}
+
+#radio4:checked ~ .slider__img > .slider__img-preinner > .slider__img-inner {
+    transform: translateX(-300%);
+}
+
+#radio1:checked ~ .slider__title > .slider__title-preinner > .slider__title-inner {
+	transform: translateX(-0%);	
+}
+
+#radio2:checked ~ .slider__title >  .slider__title-preinner > .slider__title-inner {
+	transform: translateX(-100%);	
+}
+
+#radio3:checked ~ .slider__title > .slider__title-preinner > .slider__title-inner {
+	transform: translateX(-200%);	
+}
+
+#radio4:checked ~ .slider__title >  .slider__title-preinner > .slider__title-inner {
+	transform: translateX(-300%);	
+}
+
+#radio1:checked ~ .slider__title > .slider__buttons > .slider__button > .slider__control-1 {
+	background-color: #FFFFFF;
+}
+
+#radio2:checked ~ .slider__title > .slider__buttons > .slider__button > .slider__control-2 {
+	background-color: #FFFFFF;
+}
+
+#radio3:checked ~ .slider__title > .slider__buttons > .slider__button > .slider__control-3 {
+	background-color: #FFFFFF;
+}
+
+#radio4:checked ~ .slider__title > .slider__buttons > .slider__button > .slider__control-4 {
+	background-color: #FFFFFF;
+}
+
+@media screen and (max-width: 60rem){
+    .slider__title {
+		flex-direction: column-reverse;
+    }
+
+	.slider__buttons {
+		justify-content: center;
+		padding: 0 0 3% 0;
+	}
+
+	.slider__title-text {
+
+	}
+}
